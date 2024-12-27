@@ -1,0 +1,9 @@
+FROM alpine:latest
+
+RUN apk add --no-cache netcat-openbsd
+
+COPY client.sh /scripts/client.sh
+WORKDIR /scripts
+
+ENTRYPOINT ["sh", "client.sh"]
+
